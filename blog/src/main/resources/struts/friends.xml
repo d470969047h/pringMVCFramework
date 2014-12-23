@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<!-- friends的配置 -->
+<struts>
+	<package name="friends" namespace="/friends" extends="struts-default">
+		<action name="friends" class="com.shinowit.blog.actions.FriendsAction">
+			<result>/WEB-INF/views/friends.jsp</result>
+		</action>
+	</package>
+</struts>
+

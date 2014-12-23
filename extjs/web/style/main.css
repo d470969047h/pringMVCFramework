@@ -1,0 +1,7 @@
+body {background-color: #3892d3 }
+.part01{ width:90%; height:48px; margin-left: 10px; margin-top: 10px; margin-right: 10px; }
+.part01:hover{ background:#83cbff}
+.part01 img{ width:48px; height:48px; float:left; margin-right: 10px;}
+.con{ width: auto; height:48px; float:left}
+.con span{ font:normal 12px/18px ""; display:block; height:18px}
+.con .con1{ width: auto; height:30px;font-style: italic;color:red;}

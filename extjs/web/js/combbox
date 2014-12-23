@@ -1,0 +1,165 @@
+Ext.onReady(
+    function(){
+        Ext.define(
+            'model',
+            {
+                extend:'Ext.data.Model',
+                fields:[
+                    {name:'id',mapping:'id',type:'int'},
+                    {name:'name',mapping:'name',type:'string'}
+                ]
+            }
+
+        );
+        //加载省的数据
+        var storeSheng = Ext.create(
+            'Ext.data.Store',
+            {
+                model:'model',
+                proxy:{
+                    type:'ajax',
+                    url:'city_sheng',
+                    reader:{
+                        type:'json',
+                        root:'sheng'
+                    }
+                },
+                autoLoad:true,
+                remoteSort:true
+            }
+        );
+        //加载市的数据
+        var storeShi = Ext.create(
+            'Ext.data.Store',
+            {
+                model:'model',
+                proxy:{
+                    type:'ajax',
+                    url:'city_shi',
+                    reader:{
+                        type:'json',
+                        root:'shi'
+                    }
+                },
+                autoLoad: false,
+                remoteSort:true
+            }
+        );
+        //加载区的数据
+        var storeQu = Ext.create(
+            'Ext.data.Store',
+            {
+                model:'model',
+                proxy:{
+                    type:'ajax',
+                    url:'city_qu',
+                    reader:{
+                        type:'json',
+                        root:'qu'
+                    }
+                },
+                autoLoad: false,
+                remoteSort:true
+
+            }
+        );
+
+        Ext.create(
+            'Ext.panel.Panel',
+            {
+                width:300,
+                height:200,
+                title:'三级联动',
+                renderTo:Ext.getBody(),
+                defaluts:{
+                    autoScroll:true
+                },
+                items:[
+                    {
+                        xtype:"combo",
+                        name:'sheng',
+                        id:'sheng',
+                        fieldLabel:'选择省',
+                        displayField:'name',
+                        valueField:'id',
+                        store:storeSheng,
+                        triggerAction:'all',
+                        queryMode:'local',
+                        selecOnFocus:true,
+                        forceSelection:true,
+                        allowBlank:false,
+                        editable:true,
+                        emptyText:'请选择省',
+                        blankText:'请选择省',
+                        listeners:{
+                            select:function(combo,record,index){
+                                try{
+                                    var shi = Ext.getCmp('shi');
+                                    var qu = Ext.getCmp('qu');
+                                    shi.clearValue();
+                                    qu.clearValue();
+                                    shi.store.load(
+                                        {
+                                            params:{
+                                                paramId:combo.getValue()
+                                            }
+                                        }
+                                    );
+                                }catch(ex){
+                                    alert("数据加载失败！");
+                                }
+
+                            }
+                        }
+
+                    },{
+                        xtype:"combo",
+                        name:'shi',
+                        id:'shi',
+                        fieldLabel:'选择市',
+                        displayField:'name',
+                        valueField:'id',
+                        store:storeShi,
+                        triggerAction:'all',
+                        queryMode:'local',
+                        selecOnFocus:true,
+                        forceSelection:true,
+                        allowBlank:false,
+                        editable:true,
+                        emptyText:'请选择市',
+                        blankText:'请选择市',
+                        listeners:{
+                            select:function(combo,record,index){
+                                try{
+                                    var qu = Ext.getCmp('qu');
+                                    qu.clearValue();
+                                    qu.store.load(
+                                        {
+                                            params:{
+                                                paramId:combo.getValue()
+                                            }
+                                        }
+                                    );
+                                }catch(ex){
+                                    alert("加载数据失败！");
+                                }
+
+                            }
+                        }
+
+                    },{
+                        xtype:'combo',
+                        name:'qu',
+                        id:'qu',
+                        store:storeQu,
+                        fieldLabel:'选择区',
+                        emptyText:'请选择区',
+                        allowBlank:false,
+                        displayField:'name',
+                        queryMode:'local'
+                    }
+                ]
+            }
+        )
+    }
+)

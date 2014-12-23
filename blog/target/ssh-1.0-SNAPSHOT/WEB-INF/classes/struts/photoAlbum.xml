@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<!-- 这是index页的配置 -->
+<struts>
+	<package name="photoAlbum" namespace="/photoAlbum" extends="struts-default">
+		<action name="photoAlbum" class="com.shinowit.blog.actions.photoAlbumAction">
+			<result>/WEB-INF/views/photoAlbum.jsp</result>
+		</action>
+	</package>
+</struts>

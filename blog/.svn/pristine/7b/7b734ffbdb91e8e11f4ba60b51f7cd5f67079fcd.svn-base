@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <!-- 用于文件上传的常量设定 -->
+    <constant name="struts.multipart.maxSize" value="90000000"/>
+    <constant name="Struts.devMode" value="true"></constant>
+    <constant name="struts.enable.DynamicInvocation" value="false"></constant>
+    <constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>
+    <constant name="struts.action.extension" value="action,jsp" />
+    <constant name="struts.i18n.reload" value="false" />
+    <constant name="struts.custom.i18n.resources" value="globalMessages" />
+
+    <!-- index页面 -->
+    <include file="struts/index.xml"></include>
+    <!-- 用户注册页 -->
+    <include file="struts/reg.xml"></include>
+    <!-- 日志列表页 -->
+    <include file="struts/blogList.xml"></include>
+    <!-- 相册页 -->
+    <include file="struts/photoAlbum.xml"></include>
+    <!-- 博友页 -->
+    <include file="struts/friends.xml"></include>
+    <!-- “关于”页 -->
+    <include file="struts/about.xml"></include>
+    <!-- 发表博文页 -->
+    <include file="struts/edit.xml"></include>
+    <!-- 注册页面的验证码页，需要用action引入一下 -->
+    <include file="struts/validCode.xml"></include>
+    <!-- 博文详细内容页 -->
+    <include file="struts/blogDetails.xml"></include>
+    <!-- 相册里的具体相片页 -->
+    <include file="struts/photoes.xml"></include>
+
+</struts>

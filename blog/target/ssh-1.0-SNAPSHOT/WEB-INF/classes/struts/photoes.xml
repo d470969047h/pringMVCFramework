@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<!-- 这是photoes页的配置 -->
+<struts>
+	<!-- 页面空白Action -->
+	<package name="photoes" namespace="/" extends="struts-default">
+		<action name="photoes" class="com.shinowit.blog.actions.PhotoesAction">
+			<result>/WEB-INF/views/photoes.jsp</result>
+		</action>
+	</package>
+</struts>

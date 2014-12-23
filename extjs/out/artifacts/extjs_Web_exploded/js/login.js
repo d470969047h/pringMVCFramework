@@ -1,0 +1,45 @@
+Ext.onReady(function(){
+   Ext.create('Ext.panel.Panel',{
+       title:'µÇÂ½',
+       layout:'fit',
+       width:300,
+       items:[{
+           xtype:'form',
+           border:false,
+           margin:5,
+           defaults:{
+               xtype:'textfield',
+               allowBlank:false,
+               labelWidth:75,
+               labelAlign:'right'
+           },
+           items:[
+               {
+                   fieldLabel:'ÓÃ»§Ãû',
+                   name:'username'
+               },
+               {
+                   fielLabel:'ÃÜÂë',
+                   name:'userpass',
+                   inputType:'password'
+               }
+           ]
+       }],
+       buttons:[{
+           text:'µÇÂ½',
+           handler:function(){
+               var form=this.up('panel').down('form').getForm();
+               if(form.isValid()){
+                   form.submit({
+                       url:'/login',
+                       method:'post',
+                       success:function(form,action){
+
+                       }
+                   })
+               }
+           }
+       }],
+   });
+
+});

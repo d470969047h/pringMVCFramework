@@ -1,0 +1,93 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;font-size:12px;font-family:Verdana, Arial, Helvetica, sans-serif, '宋体';}
+img{border:0;}
+
+ul{list-style:none;}
+a{text-decoration:none;color:#f36019;}
+a:hover{text-decoration:underline;color:#000}
+html{background:#e7e7dc;}
+body{background:#FFF;width:950px;height:100%;margin:20px auto 20px auto;border:4px #e3e3d5 solid;}
+
+#header{width:100%;height:132px;}
+	#header #headerTop{height:100px;position:relative;}
+		#header #headerTop #searchBox{position:absolute;top:0;right:20px;height:100px;width:230px;}
+		#header #headerTop #searchBox #search{cursor:pointer;}
+		#header #headerTop #searchBox #searchSpan{height:75px;width:220px;border:1px #fe7f24 solid;background:#F9F9F9;display:none;}
+			#header #headerTop #searchBox #searchSpan input{float:left;border:1px #ffb783 solid;height:16px;margin:27px 0 0 10px;}
+			#header #headerTop #searchBox #searchSpan #keys{width:150px;}
+			#header #headerTop #searchBox #searchSpan #searchSub{margin-left:5px;height:18px;line-height:16px;background:#f15d17;color:#FFF;}
+		
+	#header #mainMenu{height:32px;background:url(../images/mainMenuBg.gif);position:relative;}
+		#header #mainMenu #menuLeft{position:absolute;left:0;cursor:pointer;}
+		#header #mainMenu #menuRight{position:absolute;right:0;cursor:pointer;}
+		#header #mainMenu #menuMasker{position:absolute;left:50px;}
+		#header #mainMenu ul{position:absolute;padding-left:50px;}
+		#header #mainMenu ul li{float:left;height:32px;line-height:32px;padding:0 20px 0 20px;}
+		#header #mainMenu ul li a{font-weight:bold;color:#616161}
+		#header #mainMenu ul li .over{color:#FFF;}
+
+#footer{clear:both;text-align:center;line-height:45px;width:100%;}
+
+#right{float:right;width:285px;margin:10px;display:inline;}
+	#right .rightMenu{width:285px;height:24px;line-height:23px;text-indent:10px;cursor:pointer;background:url(../images/rightItem.gif);color:#FFF;margin:3px 0 3px 0;}
+	#right .rightMenu2{width:285px;height:24px;line-height:23px;text-indent:10px;cursor:pointer;background:url(../images/rightItem2.gif);color:#FFF;margin:3px 0 3px 0;}
+	#right .rightNr{padding:10px;width:263px;overflow:hidden;border:1px #ebebeb solid;background:#F9F9F9;display:none;color:#4d4d4d;line-height:150%;text-indent:2em;}
+		#right .rightNr ul li{text-indent:0px;}
+		#right .rightNr ul li .reName{font-weight:bold}
+		#right .rightNr ul li .reNr{padding-bottom:10px;line-height:150%;}
+		#right .rightNr ul li .reTag{padding-bottom:5px;}
+		#right .rightNr ul li .reTag a{color:#8c8c8c}
+		#right .rightNr ul li .reTag a:hover{color:#000}
+	
+	#right .rightListTitle{margin:15px 0 5px 0;display:block;font-size:20px;color:#f9711f;}
+	#right .rightList{padding:10px;width:263px;overflow:hidden;border:1px #ebebeb solid;background:#FCFCFC;color:#4d4d4d;line-height:150%;text-indent:2em;}
+		#right .rightList ul li{background:url(../images/ico1.gif) no-repeat 8px; text-indent:24px;height:28px;line-height:28px;}
+			#right .rightList ul li a{color:#8c8c8c}
+			#right .rightList ul li a:hover{color:#f36019}
+	
+#left{float:left;width:620px;margin:10px;display:inline;}
+	#left .ListItem{border:1px #ebebeb solid;width:600px;overflow:auto;margin:3px 0 7px 0;background:#FCFCFC;padding:10px;}
+		#left .ListItem .ListItemTop{height:40px;position:relative;}
+			#left .ListItem .ListItemTop span{position:absolute;top:10px;border-bottom:1px #a2a8a7 solid;display:block;width:100%;padding-bottom:5px;}
+			#left .ListItem .ListItemTop .edit{position:absolute;right:0;}
+			#left .ListItem .ListItemTop .del{position:absolute;cursor:pointer;right:0;}
+			#left .ListItem .ListItemTop .sort{font-weight:bold;}
+		#left .ListItem .ListItemContent{padding-top:5px;overflow:hidden;widht:100%;}
+			#left .ListItem .ListItemContent h1{padding-bottom:8px;}
+				#left .ListItem .ListItemContent h1 a{font-size:18px;}
+				#left .ListItem .ListItemContent .content{width:100%;line-height:150%;text-indent:2em;color:#84878e;padding-bottom:10px;}
+				#left .ListItem .ListItemContent .foot{height:30px;line-height:30px;width:100%;}
+					#left .ListItem .ListItemContent .foot .tag{float:left;}
+					#left .ListItem .ListItemContent .foot .more{float:right;}
+		#left .ListItem .ListBox{padding-top:5px;overflow:hidden;widht:100%;}
+		#left .ListItem .ListBox li{background:url(../images/ico1.gif) no-repeat 7px;height:30px;line-height:30px;text-indent:25px;color:#a0a0a0}
+		
+		#left .contentBox{line-height:180%;text-indent:2em;overflow:hidden;padding-top:5px;}
+			#left .contentBox p{padding-bottom:10px;}
+			#left .photoBox{border:1px #cacaca solid;width:120px;height:140px;text-indent:0px;padding:5px;text-align:center;float:left;margin:0 12px 15px 5px;}
+				#left .photoBox .photoFace{width:110px;height:110px;padding:3px;border:1px #dcdcdc solid;}
+		#left .ulBox{line-height:180%;width:100%;}
+			#left .ulBox li{height:100px;border-bottom:1px #cacaca dashed;padding-top:8px;width:100%;}
+				#left .ulBox li .friendphoto{float:left;width:80px;height:80px;padding:3px;border:1px #dcdcdc solid;margin-right:10px;}
+				#left .ulBox li div{float:left;}
+					#left .ulBox li div strong{float:left;}
+					#left .ulBox li div span{clear:left;float:left;}
+				#left .ulBox li a.comm{clear:right;float:right;}
+		#left .photoContent{line-height:180%;text-align:center;overflow:hidden;}
+			#left .photoContent p{width:100%;margin-bottom:15px;font-size:20px;font-weight:bold;}
+			#left .photoContent .photoS{width:50px;height:50px;float:left;margin:3px 2px;cursor:pointer}
+					
+.pages{width:100%;height:30px;}
+.pages a{display:block;width:30px;text-align:center;height:20px;line-height:20px;border:1px #e4e4e4 solid;float:left; white-space:nowrap;margin:3px;}
+.pages a:hover{border:1px #f36019 solid;}
+
+#myForm{text-align:center;width:100%;padding-top:10px;}
+	#myForm p{height:30px;}
+	#myForm label{width:80px;text-align:right;display:block;float:left;height:20px;}
+	#myForm .txt{float:left;}
+
+.blogTitle{width:580px;height:30px;line-height:30px;border:0;border-bottom:1px #a1a1a1 solid;font-size:20px;}
+.blogContent{width:580px;height:300px;font-size:16px;border:1px #a1a1a1 solid;}
+.blogBut{font-size:16px;}
+.color1{color:#a0d109}

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="MySQL - blog@localhost" uuid="918267de-371c-4882-b617-32c9c2d38041">
+    <database-info product="MySQL" version="5.6.14-enterprise-commercial-advanced" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.31 ( Revision: alexander.soklakov@oracle.com-20140520065950-groqzzbvxprqdmnz )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="blog"/>
+    <table name="t_about" schema="" catalog="blog" type="TABLE">
+      <column name="about_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="about_content" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="about_id"/>
+      <index name="Index_1" unique="false" columns="about_id"/>
+    </table>
+    <table name="t_articles" schema="" catalog="blog" type="TABLE">
+      <column name="article_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_Id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="category_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="label_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="article_title" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="article_content" sqlType="VARCHAR" precision="5000" scale="0" nullable="true" jdbcType="12"/>
+      <column name="article_post_time" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="Q1VSUkVOVF9USU1FU1RBTVA=" version="true"/>
+      <primary-key name="PRIMARY" columns="article_id"/>
+      <foreign-key name="FK_Reference_10" columns="label_id" ref-table="t_label" ref-schema="" ref-catalog="blog" ref-columns="label_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_Reference_8" columns="user_Id" ref-table="t_userinfo" ref-schema="" ref-catalog="blog" ref-columns="user_Id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_Reference_9" columns="category_id" ref-table="t_articles_category" ref-schema="" ref-catalog="blog" ref-columns="category_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_Reference_10" unique="false" columns="label_id"/>
+      <index name="FK_Reference_8" unique="false" columns="user_Id"/>
+      <index name="FK_Reference_9" unique="false" columns="category_id"/>
+      <index name="Index_1" unique="false" columns="article_id"/>
+    </table>
+    <table name="t_articles_category" schema="" catalog="blog" type="TABLE">
+      <column name="category_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="category_name" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="category_id"/>
+      <exported-key name="FK_Reference_9" table="t_articles" schema="" catalog="blog" columns="category_id"/>
+      <index name="Index_1" unique="false" columns="category_id"/>
+    </table>
+    <table name="t_friends" schema="" catalog="blog" type="TABLE">
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_Id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="friend_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="FK_Reference_2" columns="user_Id" ref-table="t_userinfo" ref-schema="" ref-catalog="blog" ref-columns="user_Id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_Reference_3" columns="friend_id" ref-table="t_userinfo" ref-schema="" ref-catalog="blog" ref-columns="user_Id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_Reference_11" table="t_message" schema="" catalog="blog" columns="id"/>
+      <index name="FK_Reference_2" unique="false" columns="user_Id"/>
+      <index name="FK_Reference_3" unique="false" columns="friend_id"/>
+      <index name="Index_1" unique="false" columns="id"/>
+    </table>
+    <table name="t_label" schema="" catalog="blog" type="TABLE">
+      <column name="label_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="label_name" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="label_id"/>
+      <exported-key name="FK_Reference_10" table="t_articles" schema="" catalog="blog" columns="label_id"/>
+      <index name="Index_1" unique="false" columns="label_id"/>
+    </table>
+    <table name="t_message" schema="" catalog="blog" type="TABLE">
+      <column name="message_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="message_cont" sqlType="VARCHAR" precision="2500" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="message_id"/>
+      <foreign-key name="FK_Reference_11" columns="id" ref-table="t_friends" ref-schema="" ref-catalog="blog" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_Reference_11" unique="false" columns="id"/>
+      <index name="Index_1" unique="false" columns="message_id"/>
+    </table>
+    <table name="t_photo_album" schema="" catalog="blog" type="TABLE">
+      <column name="photo_album_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_Id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="photo_album_name" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="album_info" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="photo_album_id"/>
+      <foreign-key name="FK_Reference_4" columns="user_Id" ref-table="t_userinfo" ref-schema="" ref-catalog="blog" ref-columns="user_Id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_Reference_12" table="t_photos" schema="" catalog="blog" columns="photo_album_id"/>
+      <index name="FK_Reference_4" unique="false" columns="user_Id"/>
+      <index name="Index_1" unique="false" columns="photo_album_id"/>
+    </table>
+    <table name="t_photos" schema="" catalog="blog" type="TABLE">
+      <column name="photo_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="photo_album_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="photo_name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="store_path" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="photo_info" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="photo_id"/>
+      <foreign-key name="FK_Reference_12" columns="photo_album_id" ref-table="t_photo_album" ref-schema="" ref-catalog="blog" ref-columns="photo_album_id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="FK_Reference_12" unique="false" columns="photo_album_id"/>
+      <index name="Index_1" unique="false" columns="photo_id"/>
+    </table>
+    <table name="t_school" schema="" catalog="blog" type="TABLE">
+      <column name="school_ID" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="school_name" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="school_ID"/>
+      <exported-key name="FK_Reference_7" table="t_userinfo" schema="" catalog="blog" columns="school_ID"/>
+      <index name="Index_1" unique="false" columns="school_ID"/>
+    </table>
+    <table name="t_sex" schema="" catalog="blog" type="TABLE">
+      <column name="code" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="sex_name" sqlType="CHAR" precision="4" scale="0" nullable="true" jdbcType="1"/>
+      <primary-key name="PRIMARY" columns="code"/>
+      <exported-key name="FK_Reference_6" table="t_userinfo" schema="" catalog="blog" columns="code"/>
+      <index name="Index_1" unique="false" columns="code"/>
+    </table>
+    <table name="t_userinfo" schema="" catalog="blog" type="TABLE">
+      <column name="user_Id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="code" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="school_ID" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="user_name" sqlType="VARCHAR" precision="50" scale="0" nullable="false" jdbcType="12"/>
+      <column name="user_pass" sqlType="VARCHAR" precision="20" scale="0" nullable="false" jdbcType="12"/>
+      <column name="user_pass_que" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="user_pass_ans" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <column name="birthday" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="nick_name" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="50" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="user_photo" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="user_Id"/>
+      <foreign-key name="FK_Reference_6" columns="code" ref-table="t_sex" ref-schema="" ref-catalog="blog" ref-columns="code" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="FK_Reference_7" columns="school_ID" ref-table="t_school" ref-schema="" ref-catalog="blog" ref-columns="school_ID" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="FK_Reference_8" table="t_articles" schema="" catalog="blog" columns="user_Id"/>
+      <exported-key name="FK_Reference_2" table="t_friends" schema="" catalog="blog" columns="user_Id"/>
+      <exported-key name="FK_Reference_3" table="t_friends" schema="" catalog="blog" columns="friend_id"/>
+      <exported-key name="FK_Reference_4" table="t_photo_album" schema="" catalog="blog" columns="user_Id"/>
+      <index name="FK_Reference_6" unique="false" columns="code"/>
+      <index name="FK_Reference_7" unique="false" columns="school_ID"/>
+      <index name="Index_1" unique="false" columns="user_Id"/>
+    </table>
+  </data-source>
+</component>

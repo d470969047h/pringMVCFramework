@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<package name="reg" namespace="/reg" extends="struts-default">
+
+        <!-- 登陆注册页面时访问 -->
+        <action name="regStart" class="com.shinowit.actions.RegAction" method="querySchool">
+            <result name="query">/WEB-INF/views/reg.jsp</result>
+        </action>
+
+		<action name="reg" class="com.shinowit.actions.RegAction"
+			method="reg">
+			<!-- 图片上传拦截器 -->
+			<interceptor-ref name="fileUpload">
+				<param name="allowedTypes">image/bmp,image/png,image/gif,image/jpeg,image/jpg,image/x-portable-bitmap</param>
+				<param name="maximumSize">40280000</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			
+			<!-- action跳action，注册成功条index页面 -->
+			<result type="redirectAction">
+				<param name="actionName">blogShow.jsp</param>
+				<param name="namespace">/blogshow</param>
+			</result>
+			
+			<!-- 注册失败跳转 -->
+			<result name="input">/WEB-INF/views/reg.jsp</result>
+		</action>
+		
+	</package>
+</struts>
+

@@ -1,0 +1,14 @@
+.reg{font-size:23px;margin-left: 380px;}
+#log{width:536px;margin:30px auto;}
+#cmopd{float:left;width:100%;}
+	#cmopd ul{margin:15px;padding:10px;}
+		#log form li{clear:left;width:100%;line-height:35px;}
+			.ltt{float:left;width:140px;text-align:right;color:#707070;}
+			.lts{float:left;width:60px;text-align:right;color:#707070;}
+			.ltx{float:left;margin-top:6px;height:20px;line-height:20px;border:1px #a9b5ce solid;width:220px;}
+			.ltxs{float:left;margin-top:6px;height:120px;border:1px #a9b5ce solid;width:380px;}
+			.lty{float:right;margin-top:6px;height:20px;line-height:20px;border:1px #a9b5ce solid;width:120px;}
+			#log form li img{float:left;width:100px;height:30px;margin-left:5px;display:inline;}
+#cfopd{height:57px;width:100%;clear:left;text-align:center;padding-top:10px;}
+.btn_sub,.btn_res{height:22px;width:100px;border:0px;}
+.btn_sub{margin-right:10px;}

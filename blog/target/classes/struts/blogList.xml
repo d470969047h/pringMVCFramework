@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<!-- 这是index页的配置 -->
+<struts>
+	<package name="bloglist" namespace="/bloglist" extends="struts-default">
+		<action name="bloglist" class="com.shinowit.blog.actions.BlogListAction">
+			<result>/WEB-INF/views/blogList.jsp</result>
+		</action>
+	</package>
+</struts>

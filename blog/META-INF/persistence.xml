@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+    <persistence-unit name="com.shinowit.entity.TAboutEntity"></persistence-unit>
+    <persistence-unit name="com.shinowit.entity.TArticlesCategoryEntity"></persistence-unit>
+    <persistence-unit name="com.shinowit.entity.TArticlesEntity"></persistence-unit>
+    <persistence-unit name="com.shinowit.entity.TFriendsEntity"></persistence-unit>
+    <persistence-unit name="com.shinowit.entity.TLabelEntity"></persistence-unit>
+    <persistence-unit name="com.shinowit.entity.TMessageEntity"></persistence-unit>
+    <persistence-unit name="com.shinowit.entity.TPhotoAlbumEntity"></persistence-unit>
+    <persistence-unit name="com.shinowit.entity.TPhotosEntity"></persistence-unit>
+    <persistence-unit name="com.shinowit.entity.TSchoolEntity"></persistence-unit>
+    <persistence-unit name="com.shinowit.entity.TSexEntity"></persistence-unit>
+    <persistence-unit name="com.shinowit.entity.TUserinfoEntity"></persistence-unit>
+</persistence>

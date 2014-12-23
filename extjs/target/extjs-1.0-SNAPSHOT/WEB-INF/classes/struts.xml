@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <constant name="struts.i18n.reload" value="false"/>
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.custom.i18n.resources" value="globalMessages"/>
+
+    <package name="default" extends="struts-default,json-default" namespace="/">
+        <action name="user_upload" class="com.shinowit.actions.UserAction" method="upload">
+            <result type="json" name="success"/>
+        </action>
+
+        <action name="city_*" class="com.shinowit.actions.CityAction" method="{1}">
+            <result type="json" name="success"/>
+        </action>
+
+        <!--grid分页-->
+        <action name="grid" class="com.shinowit.actions.GridAction" method="queryCity">
+            <result type="json" name="success"/>
+        </action>
+
+        <!--grid的添加数据-->
+        <action name="addCity" class="com.shinowit.actions.CityEditorAction" method="addCity">
+            <result type="json" name="ok"/>
+        </action>
+
+        <!--grid的修改数据-->
+        <action name="updateCity" class="com.shinowit.actions.CityUpdateAction" method="updateCity">
+            <result type="json" name="success"/>
+        </action>
+
+        <!--grid的删除数据-->
+        <action name="deleteCity" class="com.shinowit.actions.CityDeleteAction" method="deleteCity">
+            <result type="json" name="success"/>
+        </action>
+
+        <!--grid的查询数据-->
+        <action name="queryCity" class="com.shinowit.actions.CityQueryAction" method="queryCity">
+            <result type="json" name="success"/>
+        </action>
+
+        <!--登陆-->
+        <action name="login" class="com.shinowit.actions.LoginAction" method="login">
+            <result type="json" name="ok">
+                <param name="includeProperties">success,message,state</param>
+            </result>
+        </action>
+
+        <!--主界面-->
+        <action name="main" class="com.shinowit.actions.MainAction" method="queryJSON">
+            <result type="json" name="ok">
+            </result>
+        </action>
+    </package>
+
+</struts>
+

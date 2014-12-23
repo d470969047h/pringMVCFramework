@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<!-- 这是blogdetails页的配置 -->
+<struts>
+	<package name="blogdetails" namespace="/blogdetails" extends="struts-default">
+		<action name="blogdetails" class="com.shinowit.blog.actions.BlogDetailsAction">
+			<result>/WEB-INF/views/blogDetails.jsp</result>
+		</action>
+	</package>
+</struts>
