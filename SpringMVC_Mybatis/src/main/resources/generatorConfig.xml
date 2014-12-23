@@ -19,7 +19,7 @@
         </plugin>
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://127.0.0.1:3306/test?useUnicode=true;"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/test?useUnicode=true"
                         userId="root"
                         password="daihui888">
         </jdbcConnection>
