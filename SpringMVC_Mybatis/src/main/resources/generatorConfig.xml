@@ -13,10 +13,13 @@
         <plugin type="org.mybatis.generator.plugins.EqualsHashCodePlugin"/>
         <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
         <plugin type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin"/>
-        <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
-            <property name="searchString" value="Example$"/>
-            <property name="replaceString" value="Criteria"/>
-        </plugin>
+        <!--<plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">-->
+            <!--<property name="searchString" value="Example$"/>-->
+            <!--<property name="replaceString" value="Criteria"/>-->
+        <!--</plugin>-->
+
+        <!--分页插件-->
+        <plugin type="com.shinowit.mybatis.plugin.SelectByPage4MySqlPlugin"/>
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
                         connectionURL="jdbc:mysql://127.0.0.1:3306/test?useUnicode=true"
@@ -47,15 +50,21 @@
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 
-        <!--教师表-->
-        <table tableName="teacher">
-            <generatedKey column="id" sqlStatement="MySql"
-                          identity="true"/>
-        </table>
-
         <!--用户表-->
         <table tableName="user">
 
+        </table>
+
+        <!--教师表-->
+        <table tableName="teacher1">
+        <generatedKey column="teacher_id" sqlStatement="MySql"
+        identity="true"/>
+        </table>
+
+        <!--学生表-->
+        <table tableName="student">
+        <generatedKey column="student_id" sqlStatement="MySql"
+        identity="true"/>
         </table>
 
     </context>
