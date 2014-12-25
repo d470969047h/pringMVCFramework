@@ -19,8 +19,8 @@
     <bean id="conversionService" class="org.springframework.context.support.ConversionServiceFactoryBean">
         <property name="converters">
             <set>
-                <bean class="com.shinowit.framework.convert.CustomDateConverter"/>
-                <bean class="com.shinowit.framework.convert.CustomTimestampConverter"/>
+                <!--<bean class="com.shinowit.framework.convert.CustomDateConverter"/>-->
+                <!--<bean class="com.shinowit.framework.convert.CustomTimestampConverter"/>-->
             </set>
         </property>
     </bean>
@@ -62,9 +62,9 @@
 
 
     <!--配置拦截器-->
-    <mvc:interceptors>
-        <bean class="com.shinowit.framework.interceptor.CheckLoginInterceptor"/>
-    </mvc:interceptors>
+    <!--<mvc:interceptors>-->
+        <!--<bean class="com.shinowit.framework.interceptor.CheckLoginInterceptor"/>-->
+    <!--</mvc:interceptors>-->
 
 
     <!-- jsp页面解析器，当Controller返回XXX字符串时，先通过拦截器，然后该类就会在/WEB-INF/views/目录下，查找XXX.jsp文件 -->
