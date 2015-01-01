@@ -303,6 +303,7 @@
     <resultMap id="resultMapWithTeacherName" type="com.shinowit.entity.Student" extends="BaseResultMap">
         <result column="teacher_name" property="teacherName" jdbcType="VARCHAR"/>
     </resultMap>
+
     <!--解决N+1问题的查询-->
     <select id="selectStudentWithTeacherNameByPrimaryKey" parameterType="com.shinowit.entity.StudentExample" resultMap="resultMapWithTeacherName">
         select *,(select name from teacher1 where teacher1.teacher_id=student.teacher_id) as teacher_name from student
