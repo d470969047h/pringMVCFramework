@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="3575333061">
+    <data-source source="LOCAL" name="Oracle - orcl@localhost" uuid="5b046f58-f669-4491-b4ba-9083d6495b6a">
+      <driver-ref>oracle</driver-ref>
+      <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
+      <jdbc-url>jdbc:oracle:thin:@//localhost:1521/orcl</jdbc-url>
+      <user-name>ksp</user-name>
+      <user-password>dfc1dfd9dfda</user-password>
+      <schema-pattern>*.KSP</schema-pattern>
+      <default-schemas>*.KSP</default-schemas>
+      <libraries>
+        <library>
+          <url>file://$PROJECT_DIR$/../ojdbc6-11.2.0.4.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+  </component>
+</project>
+

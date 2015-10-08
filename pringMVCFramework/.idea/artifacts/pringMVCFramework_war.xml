@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="pringMVCFramework:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/pringMVCFramework_war</output-path>
+    <root id="archive" name="pringMVCFramework_war.war">
+      <element id="artifact" artifact-name="pringMVCFramework:war exploded" />
+    </root>
+  </artifact>
+</component>

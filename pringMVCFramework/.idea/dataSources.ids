@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Oracle - orcl@localhost" uuid="5b046f58-f669-4491-b4ba-9083d6495b6a">
+    <database-info product="Oracle" version="Oracle Database 11g Enterprise Edition Release 11.2.0.1.0 - 64bit Production&#xa;With the Partitioning, OLAP, Data Mining and Real Application Testing options" jdbc-version="11.2" driver-name="Oracle JDBC driver" driver-version="11.2.0.3.0">
+      <extra-name-characters>$#</extra-name-characters>
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact"/>
+    <schema name="KSP" catalog=""/>
+    <table name="T_USER" schema="KSP" catalog="" type="TABLE">
+      <column name="ID" sqlType="VARCHAR2" precision="200" scale="0" nullable="false" jdbcType="12"/>
+      <column name="NAME" sqlType="VARCHAR2" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <column name="SEX" sqlType="VARCHAR2" precision="20" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="USER_ID_PK" columns="ID"/>
+    </table>
+  </data-source>
+</component>
